@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta charset="UTF-8">
+       <link rel="stylesheet" type="text/css" href="../assets/css/w3.css">
+	   <link rel="stylesheet" type="text/css" href="../assets/css/style1.css">
+	   <script src="../assets/js/w3.js"></script>
+	  
+  </head>
+ 
+   <body style="background-color:purple;">
+   
+      <header class="w3-bordered" style="background-color:orange">
+	  
+	  
+	  <div class="w3-bar w3-black" w3-include-html="Menu.html"></div>
+		
+		
+		
+       <h3 style="text-align:center;"> ТАКСИ "КУВАС"</h3>
+      </header>
+	   
+	   <div class="w3-responsive">
+	   <div class="w3-row">
+	   <div class="w3-col  m9">
+	 
+       
+	    <table class="w3-table w3-border" style="background-color:lightblue;">
+			<tr style="background-color:gray;">
+			    <th><select class="w3-select" id="id_vozila" name="id_vozila">
+					<option value="">Возила</option>
+					<option w3-repeat="voz in vozila_records" value="{{voz._id}}">
+	                        {{voz.ime_vozilo}}
+	                </option></select>
+				</th>
+			</tr>
+			<tr>
+				<th>Гориво</th>
+				<td><input type="number" id="gorivo" name="gorivo"></td>
+			</tr>
+			<tr>
+				<th>Друг трошок</th>
+				<td><input type="text" id="drugTrosok" name="drugTrosok"></td>
+				<th>Цена</th>
+				<td><input type="number" id="cenaT" name="cenaT"></td>
+			</tr>
+			<tr>
+			    <td><button class="w3-right w3-button w3-gray"  onclick="addTrosokVozilo()"  name="btn_save">SAVE</button></td>
+			</tr>
+	   
+	   
+	   </table>
+	   </div>
+	   
+	   <div class="w3-col  m3", style="padding:35px;">
+	     <img width="350" src="../upload/car-1.png">
+	   </div>
+	   </div>
+	   
+	   
+	   </div >
+	   
+	  
+   
+   </body>
+    <script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../controller/vozila_controller.js"></script>
+	<script src="../controller/trosokVozilo_controller.js"></script>
+   
+   
+
+	<footer style="background-color:black;">
+	
+	       <div style="background-color:orange;">
+     <p style="color:black;margin-left:40px;"> Контакт:  моб 076 745 801 </p>
+	     <a href="mailto:bile333dz@gmail.com" title="Email" class="email" target="_self"> <p style="margin-left:30px;text-decoration:bold-italic;"> Email: bile333dz@gmail.com</p>  </a><br>
+	
+	 
+	 <a href=" https://www.facebook.com/biljana.dzurovska "> 
+	 
+	 
+	 <img id="comp-jw1obf7vimgimage" style="object-position: 50% 50%; width: 38px; height: 38px; object-fit: cover;margin-left:30px;" alt="Icon file-02.png" data-type="image" itemprop="image" src="https://static.wixstatic.com/media/ea0ad0_cdb05ffd8d614d62bdb3f55184ecf958~mv2_d_1253_1253_s_2.png/v1/fill/w_38,h_38,al_c,q_85,usm_0.66_1.00_0.01/Icon%20file-02.webp">
+	 
+	</a>
+	 
+	 
+	 
+	 
+	
+	</footer>
+
+</html>

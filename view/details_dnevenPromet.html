@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Dneven Promet</title>
+	
+		<link rel="stylesheet" type="text/css" href="../assets/css/w3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../assets/css/style1.css">
+		<script src="../assets/js/w3.js"></script>
+	</head>
+
+	<body style="background-color:purple;">
+		<header class="w3-bordered" style="background-color:orange">
+	
+		<div class="w3-bar w3-black" w3-include-html="Menu.html"></div>
+		
+	     <h3 style="text-align:center;"> ДНЕВЕН ПРОМЕТ</h3>	
+	
+		</header>
+		
+	<div class="w3-responsive">
+	  <div class="w3-row">
+	   <div class="w3-col  m9">
+	
+		<table class="w3-table" style="background-color:lightblue;">
+		<thead>
+	       <tr>
+				<th style="background-color:black;">
+					<select class="w3-select w3-gray" id="id_vraboteni" name="id_vraboteni">
+						<option value="">Вработени</option>
+						<option w3-repeat="vr in vraboteni_records" value="{{vr._id}}">
+	                           {{vr.ime}} {{vr.prezime}}
+						</option>
+					</select>
+				</th>
+					
+			  <th style="background-color:black;"><select class="w3-select w3-gray" id="id_vozila" name="id_vozila">
+					<option value="">Возила</option>
+					<option w3-repeat="voz in vozila_records" value="{{voz._id}}">
+	                        {{voz.ime_vozilo}}
+	                </option></select>
+					</th>	
+		   </tr>
+		   <tr>
+		       <th>Почетни км
+			   <input type="number" id="poc_km" name="poc_km"></th>
+			</tr>
+            <tr> 			
+			   <th>Крајни км
+			    <input type="number" id="kraj_km" name="kraj_km"></th>
+			</tr> 
+			<tr> 			
+			   <th>Празни км
+			    <input type="number" id="praz_km" name="praz_km"></th>
+			</tr>
+			
+			<tr><th><button id="addArticle" class="w3-left w3-button w3-red" onclick="w3.show('#t_p')" name="addArticle()">Dopolnitelen trosok</button></th>
+			    <th><button class="w3-right w3-button w3-red" onclick="dnevenPromet()" name="btn_save">SAVE</button></th>
+			
+			</tr>
+			
+			
+			</thead>
+			<tbody id="t_p">
+			<tr id="id_dop_trosok" product="0">
+			   <th>опис
+			    <input type="text" id="id_opis0" name="id_opis0"></th><br>
+			</tr>
+		    <tr>
+			   <th>цена
+			   <input type="number" id="id_cena0" name="id_cena0"></th>
+			</tr>
+			
+			</tbody>
+			
+	    </table>
+	   </div>
+	
+	
+     <div class="w3-col  m3", style="padding:35px;">
+	     <img width="350" src="../upload/car-1.png">
+	   </div>
+	 </div>
+    </div>
+	<footer style="background-color:black;">
+	
+	       <div style="background-color:orange;">
+     <p style="color:black;margin-left:40px;"> Контакт:  моб 076 745 801 </p>
+	     <a href="mailto:bile333dz@gmail.com" title="Email" class="email" target="_self"> <p style="margin-left:30px;text-decoration:bold-italic;"> Email: bile333dz@gmail.com</p>  </a><br>
+	
+	 
+	 <a href=" https://www.facebook.com/biljana.dzurovska "> 
+	 
+	 
+	 <img id="comp-jw1obf7vimgimage" style="object-position: 50% 50%; width: 38px; height: 38px; object-fit: cover;margin-left:30px;" alt="Icon file-02.png" data-type="image" itemprop="image" src="https://static.wixstatic.com/media/ea0ad0_cdb05ffd8d614d62bdb3f55184ecf958~mv2_d_1253_1253_s_2.png/v1/fill/w_38,h_38,al_c,q_85,usm_0.66_1.00_0.01/Icon%20file-02.webp">
+	 
+	</a>
+	 
+	 </footer>
+
+</body>
+    <script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../controller/vraboteni_controller.js"></script>
+	<script src="../controller/vozila_controller.js"></script>
+	<script src="../controller/dnevenPromet_controller.js"></script>
+	
+</html>

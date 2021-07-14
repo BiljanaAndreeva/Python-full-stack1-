@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+   <title> Vozila </title>
+   
+   <link rel="stylesheet" type="text/css" href="../assets/css/w3.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" href="../assets/css/style1.css">
+   <!--framework w3.js-->
+   <script src="../assets/js/w3.js"></script>
+  
+
+</head>
+
+<body onload="writeJSON('vozila')" style="background-color:grey;">
+
+   <header class="w3-bordered" style="background-color:#f7ff03">
+   
+   <div class="w3-bar w3-red" w3-include-html="Menu.html"></div>
+		
+		
+   <h3 style="text-align:center;"> ТАКСИ "КУВАС"</h3>
+   
+   </header>
+   
+   <div class="w3-responsive">
+   <div class="w3-row">
+	   <div class="w3-col  m9">
+  
+		
+		
+   
+   <table id="id_vozila" class="w3-table">
+     <thead>
+				    <tr class="w3-orange">
+		     <th><input class="w3-input" oninput="w3.filterHTML('#vozilo4','tr', this.value)" placeholder="Prebaraj"></th>
+		  </tr>
+		<tr>
+	       <th>Возило</th>
+		   <th>Број возило</th>
+		   <th>Измени</th>
+		   <th>Избриши</th>
+	   </tr>
+	 </thead>
+	 
+	 <tbody id="vozilo4">
+	    <tr w3-repeat="voz in vozila_records">
+<!--		<td><img width="80" src="../upload/{{voz.vozilo_img}}"></td>!-->
+			<td>{{voz.ime_vozilo}}</td>
+			<td><input type="number" id="broj_voz{{voz._id}}" name="broj_voz{{voz._id}}" value="{{voz.broj_vozilo}}"></td>
+<!--			<td>{{voz.broj_vozilo}}</td>!-->
+			<td><button onclick="editVozila('{{voz._id}}')" title="Edit"> <i class="fa fa-edit" style="color:red"></i></button> </td>
+			<td><button onclick="deleteVozila('{{voz._id}}')" title="IZBRISI"> <i class="fa fa-trash"></i></button></td>
+   
+  </tr>
+		
+		
+	 </tbody>
+	 
+   
+   </table>
+    </div>
+	
+	 <div class="w3-col  m3", style="padding:35px;">
+	     <img width="350" src="../upload/car-1.png">
+	   </div>
+	   
+	</div>
+	</div>
+	
+	
+	<footer style="background-color:black;">
+	
+	       <div style="background-color:yellow;">
+     <p style="color:black;margin-left:40px;"> Контакт:  моб 076 745 801 </p>
+	     <a href="mailto:bile333dz@gmail.com" title="Email" class="email" target="_self"> <p style="margin-left:30px;text-decoration:bold-italic;"> Email: bile333dz@gmail.com</p>  </a><br>
+	
+	 
+	 <a href=" https://www.facebook.com/biljana.dzurovska "> 
+	 
+	 
+	 <img id="comp-jw1obf7vimgimage" style="object-position: 50% 50%; width: 38px; height: 38px; object-fit: cover;margin-left:30px;" alt="Icon file-02.png" data-type="image" itemprop="image" src="https://static.wixstatic.com/media/ea0ad0_cdb05ffd8d614d62bdb3f55184ecf958~mv2_d_1253_1253_s_2.png/v1/fill/w_38,h_38,al_c,q_85,usm_0.66_1.00_0.01/Icon%20file-02.webp">
+	 
+	</a>
+	 
+	 
+	 
+	 
+	
+	</footer>
+ 
+</body>
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/app.js"></script>
+	<script src="../controller/vozila_controller.js"></script>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Dneven Promet</title>
+	
+	<link rel="stylesheet" type="text/css" href="../assets/css/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style1.css">
+    <script src="../assets/js/w3.js"></script>
+</head>
+
+<body onload="writeJSON('dnevenPromet')" style="background-color:purple;">
+	<header class="w3-bordered" style="background-color:orange">
+	
+	<div class="w3-bar w3-black" w3-include-html="Menu.html"></div>
+		
+	<h3 style="text-align:center;"> ДНЕВЕН ПРОМЕТ</h3>	
+	
+	</header>
+	
+	<div class="w3-responsive">
+	
+			<table id="id_dnevenPromet" class="w3-table w3-striped w3-bordered" style="background-color:lightblue;">
+				<thead>
+				    <tr class="w3-red">
+				       <th><input class="w3-input" oninput="w3.filterHTML('#dnPr','tr', this.value)" placeholder="Prebaraj"></th>
+					</tr>
+					<tr>
+					    
+						<th>Дата</th>
+						<th>Име</th>
+						<th>Презиме</th>
+						<th>Возило </th>
+						<th>Број возило</th>
+						<th>Почетни км</th>
+						<th>Крајни км</th>
+						<th>Активни км</th>
+						<th>Празни км</th>
+						<th>Промет</th>
+						<th>Промет-фирма</th>
+						<th>Промет-Вработен</th>
+						<th>Вкупна цена на трошок</th>
+			     		 
+					</tr>
+				</thead>
+				<tbody id="dnPr">
+					<tr w3-repeat="dp in dnevenPromet_records">
+				        <!--<td>{{dp.smena}}</td>
+						<td>{{dp.ime}}</td>
+						<td>{{dp.prezime}}</td>
+						<td>{{dp.ime_vozilo}}</td>
+						<td>{{dp.broj_vozilo}}</td>
+						<td>{{dp.pocetni_km}}</td>
+						<td>{{dp.krajni_km}}</td>
+						<td>{{dp.aktivni_km}}</td>
+						<td>{{dp.promet}}</td>!-->
+						<td>{{dp.data_promet}}</td>
+						<td>{{dp.ime}}</td>
+						<td>{{dp.prezime}}</td>
+						<td>{{dp.ime_vozilo}}</td>
+						<td>{{dp.broj_vozilo}}</td>
+						<td>{{dp.pocetni_km}}</td>
+						<td>{{dp.krajni_km}}</td>
+						<td>{{dp.aktivni_km}}</td>
+						<td>{{dp.prazni_km}}</td>
+				<!--		<td><input type="number" id="praz_km_{{dp._id}}" name="praz_km_{{dp._id}}" value="{{dp.prazni_km}}"></td>!-->
+						<td class="w3-red">{{dp.promet}}</td>
+						<td>{{dp.promet_firma}}</td>
+						<td>{{dp.promet_vraboten}}</td>
+						<td>{{dp.total_price}}</td>
+						
+						
+				<!--	<td><a href="details1_dnevenPromet.html"> <i class="fa fa-eye" style="color:red"></i></button> </td>!-->
+				<!--		<td><button class="w3-btn" onclick="w3.show('#detailsTrosok'),w3.filterHTML('#dnPr1','tr', '{{dp._id}}')" title="Vidi"> <i class="fa fa-eye" style="color:red"><td><input class="w3-input" oninput="w3.filterHTML('#dnPr','tr', this.value)">search</td></i></button></td>!-->
+						<td><button onclick="showDetails('{{dp._id}}')"><i class="fa fa-eye"></i></td>
+						<td><button onclick="editDnevenPromet('{{dp._id}}')" title="Edit"> <i class="fa fa-edit" style="color:red"></i></button> </td>
+						<td><button onclick="deleteDnevenPromet('{{dp._id}}')" title="IZBRISI"> <i class="fa fa-trash" style="color:red"></i></button> </td>
+					</tr>
+				</tbody>
+			</table>
+			<div id="details_invoice">
+			<h3>Детали за дневен трошок</h3>
+			<ul id="listProducts">
+			</ul>
+			</div>
+			
+			
+	<!--	<div>
+		    <div class="w3-col  m3", style="padding:35px;">
+	     <img width="150" src="../upload/car-1.png">
+	   </div>
+			  
+		</div>!-->
+			
+	</div>    
+	
+	<footer style="background-color:black;">
+	
+	       <div style="background-color:orange;">
+     <p style="color:black;margin-left:40px;"> Контакт:  моб 076 745 801 </p>
+	     <a href="mailto:bile333dz@gmail.com" title="Email" class="email" target="_self"> <p style="margin-left:30px;text-decoration:bold-italic;"> Email: bile333dz@gmail.com</p>  </a><br>
+	
+	 
+	 <a href=" https://www.facebook.com/biljana.dzurovska "> 
+	 
+	 
+	 <img id="comp-jw1obf7vimgimage" style="object-position: 50% 50%; width: 38px; height: 38px; object-fit: cover;margin-left:30px;" alt="Icon file-02.png" data-type="image" itemprop="image" src="https://static.wixstatic.com/media/ea0ad0_cdb05ffd8d614d62bdb3f55184ecf958~mv2_d_1253_1253_s_2.png/v1/fill/w_38,h_38,al_c,q_85,usm_0.66_1.00_0.01/Icon%20file-02.webp">
+	 
+	</a>
+	 
+	 </footer>
+
+</body>
+      <script src="../assets/js/jquery.min.js"></script>
+	  <script src="../assets/js/app.js"></script>
+	  <script src="../controller/vraboteni_controller.js"></script>
+	  <script src="../controller/vozila_controller.js"></script>
+	  <script src="../controller/dnevenPromet_controller.js"></script>
+</html>

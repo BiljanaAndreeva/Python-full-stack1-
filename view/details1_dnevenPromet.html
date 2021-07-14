@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dneven Promet</title>
+	
+	<link rel="stylesheet" type="text/css" href="../assets/css/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style1.css">
+    <script src="../assets/js/w3.js"></script>
+</head>
+
+<body onload="writeJSON('dnevenPromet');">
+	<header class="w3-bordered" style="background-color:#f7ff03">
+	
+	<div class="w3-bar w3-red" w3-include-html="Menu.html"></div>
+		
+	<h3 style="text-align:center;"> DNEVEN PROMET</h3>	
+	
+	</header>
+	
+	<div class="w3-responsive">
+	
+			<table id="id_dnevenPromet" class="w3-table w3-striped w3-bordered">
+				<thead>
+					<tr>
+					    
+					<!--	<th>Smena</th>
+						<th>Ime</th>
+						<th>Prezime</th>
+						<th>Vozilo</th>
+						<th>Broj Vozilo</th>
+						<th>Pocetni Km</th>
+						<th>Krajni Km</th>
+						<th>Aktivni Km</th>
+						<th>Promet</th>!-->
+						<th>Ime</th>
+						<th>Prezime</th>
+						<th>Ime vozilo</th>
+						<th>Broj vozilo</th>
+					<!--	<th>Pocetni Km</th>
+						<th>Krajni Km</th>
+						<th>Aktivni Km</th>
+						<th>Prazni Km</th>
+						<th>Promet</th>
+						<th>Promet-Firma</th>
+						<th>Promet-Vraboten</th>
+						<th>Dopolnitelen trosok</th>!-->
+					    <th>Opis trosok</th>
+						<th>Cena</th>
+			<!--		<th>Data</th> !-->
+					</tr>
+				</thead>
+				<tbody>
+					<tr w3-repeat="dp in dnevenPromet_records">
+				        <!--<td>{{dp.smena}}</td>
+						<td>{{dp.ime}}</td>
+						<td>{{dp.prezime}}</td>
+						<td>{{dp.ime_vozilo}}</td>
+						<td>{{dp.broj_vozilo}}</td>
+						<td>{{dp.pocetni_km}}</td>
+						<td>{{dp.krajni_km}}</td>
+						<td>{{dp.aktivni_km}}</td>
+						<td>{{dp.promet}}</td>!-->
+						<td>{{dp.ime}}</td>
+						<td>{{dp.prezime}}</td>
+						<td>{{dp.ime_vozilo}}</td>
+						<td>{{dp.broj_vozilo}}</td>
+				<!--		<td>{{dp.pocetni_km}}</td>
+						<td>{{dp.krajni_km}}</td>
+						<td>{{dp.aktivni_km}}</td>
+						<td>{{dp.prazni_km}}</td>
+						<td>{{dp.promet}}</td>
+						<td>{{dp.promet_firma}}</td>
+						<td>{{dp.promet_vraboten}}</td>
+						<td>{{dp.dopolnitelen_trosok}}</td>!-->
+					    <td>{{dp.opis}}</td>
+						<td>{{dp.cena}}</td>
+				<!--		<td>{{dp.data_promet}}</td>!-->
+						
+						<td><button onclick="deleteDnevenPromet('{{dp._id}}')" title="IZBRISI"> <i class="fa fa-trash" style="color:red"></i></button> </td>
+					</tr>
+				</tbody>
+			</table>
+			
+	</div>
+	
+	<footer style="background-color:black;">
+	
+	       <div style="background-color:yellow;">
+     <p style="color:black;margin-left:40px;"> Kontakt:  mob 076 745 801 </p>
+	     <a href="mailto:bile333dz@gmail.com" title="Email" class="email" target="_self"> <p style="margin-left:30px;text-decoration:bold-italic;"> Email: bile333dz@gmail.com</p>  </a><br>
+	
+	 
+	 <a href=" https://www.facebook.com/biljana.dzurovska "> 
+	 
+	 
+	 <img id="comp-jw1obf7vimgimage" style="object-position: 50% 50%; width: 38px; height: 38px; object-fit: cover;margin-left:30px;" alt="Icon file-02.png" data-type="image" itemprop="image" src="https://static.wixstatic.com/media/ea0ad0_cdb05ffd8d614d62bdb3f55184ecf958~mv2_d_1253_1253_s_2.png/v1/fill/w_38,h_38,al_c,q_85,usm_0.66_1.00_0.01/Icon%20file-02.webp">
+	 
+	</a>
+	 
+	 </footer>
+
+</body>
+      <script src="../assets/js/jquery.min.js"></script>
+	  <script src="../assets/js/app.js"></script>
+	  <script src="../controller/vraboteni_controller.js"></script>
+	  <script src="../controller/vozila_controller.js"></script>
+	  <script src="../controller/dnevenPromet_controller.js"></script>
+</html>

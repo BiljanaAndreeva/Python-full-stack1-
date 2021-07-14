@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+   <title> Vraboteni </title>
+   <link rel="stylesheet" type="text/css" href="../assets/css/w3.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" href="../assets/css/style1.css">
+   <!--framework w3.js-->
+   <script src="../assets/js/w3.js"></script>
+   
+
+</head>
+
+
+<body onload="writeJSON('vraboteni')" style="background-color:grey;">
+
+   <header class="w3-bordered" style="background-color:#f7ff03">
+   
+   <div class="w3-bar w3-border w3-card-4 w3-red" w3-include-html="Menu.html"></div>
+		
+		
+   <h3 style="text-align:center;"> ТАКСИ "КУВАС"</h3>
+   
+   </header>
+   
+   <div class="w3-responsive">
+   <div class="w3-row">
+	   <div class="w3-col  m9">
+  
+		
+		
+   
+   <table id="id_vraboteni" style="background-color:lightblue;">
+	   <thead>
+	      <tr class="w3-green">
+		     <th><input class="w3-input" oninput="w3.filterHTML('#vraboten','tr', this.value)" placeholder="Пребарај"></th>
+             <th><button class="w3-btn w3-red" onclick="w3.show('#novVraboten')" title="Dodadi nov vraboten">+</button></th>
+		  </tr>
+	      <tr>
+		     <th>Име</th>
+			 <th>Презиме</th>
+			 <th>Измени</th>
+			 <th>Избриши</th>
+		  </tr>
+		 </thead> 
+		 <tbody id="vraboten">
+		  <tr id="novVraboten" class="w3-yellow">
+		    <td><input class="w3-input" type="text" id="vrab" name="vrab" placeholder="Vraboten"></td>
+			<td><button class="w3-btn w3-green" onclick="addVraboteni()" title="dodadi">++</button></td>
+		  </tr>
+		  <tr w3-repeat="vr in vraboteni_records">
+		     <td>{{vr.ime}}</td>
+			 <td><input type="text" id="prezime_vraboten_{{vr._id}}" name="prezime_vraboten_{{vr._id}}" value="{{vr.prezime}}"></td>
+			 <td><button onclick="editVraboteni('{{vr._id}}')" title="Edit"> <i class="fa fa-edit" style="color:red"></i></button> </td>
+			 <td><button onclick="deleteVraboteni('{{vr._id}}')" title="IZBRISI"> <i class="fa fa-trash" style="color:red"></i></button> </td>
+		  </tr>
+		 </tbody> 
+	 
+   
+   </table>
+
+    </div>
+	
+	 <div class="w3-col  m3", style="padding:35px;">
+	     <img width="350" src="../upload/car-1.png">
+	   </div>
+	   
+	</div>
+	</div>
+	
+	
+	<footer style="background-color:black;">
+	
+	    <div style="background-color:yellow;">
+			<p style="color:black;margin-left:40px;"> Контакт:  моб 076 745 801 </p>
+			<a href="mailto:bile333dz@gmail.com" title="Email" class="email" target="_self"> <img src="../upload/email.jpg" alt="email" style="width:50px;">  </a><br>
+	
+	 
+			<a href=" https://www.facebook.com/biljana.dzurovska "> 
+	 
+				<img src="../upload/facebook.jpg" alt="fb" style="width:50px;"> 
+			</a>
+		</div>		
+	 
+	 </footer>
+	
+</body> 
+	  <script src="../assets/js/jquery.min.js"></script>
+	  <script src="../assets/js/app.js"></script>
+	 <script src="../controller/vraboteni_controller.js"></script>
+</html>
+<!-- <!DOCTYPE html>
+<html>
+<head>
+   <title> Vraboteni </title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/w3.css">
+   <link rel="stylesheet" type="text/css" href="../assets/css/style1.css">
+   <!--framework w3.js!>
+   <script src="../assets/js/w3.js"></script>
+   
+   
+   </head>
+   
+   
+   <body>
+      <table id="id_vraboteni" class="w3-table" >
+	   <thead>
+	      <tr>
+		     <th>ime</th>
+			 <th>prezime</th>
+		  </tr>
+		 </thead> 
+		 <tbody>
+		  <tr w3-repeat="vr in vraboteni_records">
+		     <td>{{vr.ime}}</td>
+			 <td>{{vr.prezime}}</td>
+		  </tr>
+		 </tbody>
+		  
+	  </table>
+	  <script src="../controller/vraboteni_controller.js"></script>
+   </body>
+   </html> !-->
